@@ -1,0 +1,6 @@
+{
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "eslint.options": {
+    "configFile": "./node_modules/standard/eslintrc.json"
+    },  
+}
