@@ -1,0 +1,36 @@
+{
+  "name": "carlos-router",
+  "version": "0.0.3",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepare": "npx swc ./src/index.jsx ./src/components/LINK.jsx ./src/components/Route.jsx ./src/components/Router.jsx ./src/utils/utils.js ./src/utils/consts.js -d lib",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "path-to-regexp": "8.2.0"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "happy-dom": "^18.0.1",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.3"
+  }
+}
