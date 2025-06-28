@@ -1,25 +1,24 @@
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "./App.css";
-import { SortBy, type User } from "./types.d";
+import { SortBy } from "./types.d";
 import { UsersList } from "./UsersList/UsersList";
+import { useUsers } from "./hooks/useUsers";
+import { Results } from "./components/Results";
+import { type User } from "./types.d"; // Asegúrate de que la ruta sea correcta
+
+// Este es el bloque de React Query
 
 function App() {
+  const { isLoading, isError, usersReceived, fetchNextPage, hasNextPage } =
+    useUsers();
+
   const [users, setUsers] = useState<User[]>([]);
-
   const [showColors, setShowColors] = useState(false);
-
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE);
   const [filterCountry, setFilterCountry] = useState<string | null>(null);
-  const originalUsers = useRef<User[]>([]);
-  // useRef es para guardar un valor
-  // que queremos que se comparta entre renderizados
-  // pero que al cambiar, no vuelva a renderizar el componente
 
-  // const toggleSortByCountry = () => {
-  //   const newSortingValue =
-  //     sorting === SortBy.NONE ? SortBy.COUNTRY : SortBy.NONE;
-  //   setSorting(newSortingValue);
-  // };
+  console.log("users", users);
+  console.log("usersReceived", usersReceived);
 
   const changeSorting = (sortType: SortBy) => {
     setSorting(sortType);
@@ -30,7 +29,7 @@ function App() {
   };
 
   const handleReset = () => {
-    setUsers(originalUsers.current);
+    setUsers(usersReceived);
   };
 
   const handleDelete = (email: string) => {
@@ -71,19 +70,9 @@ function App() {
       : filteredUsers;
   }, [filteredUsers, sorting]);
 
-  //const sortedUsers = sortUsers();
-
   useEffect(() => {
-    fetch("https://randomuser.me/api?results=100")
-      .then(async (res) => await res.json())
-      .then((res) => {
-        setUsers(res.results);
-        originalUsers.current = res.results;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+    setUsers(usersReceived);
+  }, [usersReceived]);
 
   return (
     <>
@@ -98,12 +87,44 @@ function App() {
           />
         </header>
         <main>
-          <UsersList
-            deleteUser={handleDelete}
-            showColors={showColors}
-            users={sortedUsers}
-            setSorting={setSorting}
-          />
+          {users.length > 0 && (
+            <div className="sorting">
+              <Results />
+              <button onClick={() => changeSorting(SortBy.NAME)}>
+                Ordenar por nombre
+              </button>
+              <button onClick={() => changeSorting(SortBy.LAST)}>
+                Ordenar por apellido
+              </button>
+              <button onClick={() => changeSorting(SortBy.COUNTRY)}>
+                Ordenar por país
+              </button>
+              <button onClick={() => changeSorting(SortBy.NONE)}>
+                Quitar ordenación
+              </button>
+              <UsersList
+                deleteUser={handleDelete}
+                showColors={showColors}
+                users={sortedUsers}
+                setSorting={setSorting}
+              />
+
+              {!isLoading && !isError && hasNextPage === true && (
+                <button
+                  onClick={async () => {
+                    await fetchNextPage();
+                  }}
+                >
+                  Cargar mas resultados
+                </button>
+              )}
+            </div>
+          )}
+          {isLoading && <p>Cargando...</p>}
+          {isError && <p>Error: {isError}</p>}
+          {!isLoading && !isError && users.length === 0 && (
+            <p>No hay usuarios para mostrar</p>
+          )}
         </main>
       </div>
     </>
