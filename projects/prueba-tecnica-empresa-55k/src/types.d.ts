@@ -88,8 +88,3 @@ export enum SortBy {
   LAST = "last",
   COUNTRY = "country",
 }
-
-export interface FetchUsersResponse {
-  users: User[];
-  nextCursor: number | undefined; // Aquí se asume que la API devuelve un campo info con la página actual
-}
