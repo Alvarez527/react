@@ -9,7 +9,7 @@ export interface CommentWithId extends Comment {
 }
 
 // ApiKey could be public as service is 100% free
-const apiKey = "$2a$10$4Z1LWyby6SN5RfK.oP71FOAj6a7EwSEKfeL.Ptb/K9K2NE2jP5hnO";
+const apiKey = import.meta.env.VITE_API_KEY || "";
 
 export const getComments = async () => {
   const response = await fetch(
