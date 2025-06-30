@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple HTML Page</title>
+    <link rel="stylesheet" href="./assets/output.css" />
+  </head>
+  <body
+    class="max-w-xl mx-auto min-h-dvh bg-gradient-to-b from-black via-sky-950 to-gray-800"
+  >
+    <header
+      class="text-white flex flex-col justify-center items-center gap-4 p-4"
+    >
+      <img
+        alt="carlos alvarez picture"
+        src="./assets/carlos-company.jpeg"
+        class="h-96 object-cover mask-radial-at-center mask-radial-from-50% mask-radial-to-70% animate-flash"
+      />
+
+      <header class="flex flex-col justify-center items-center">
+        <span
+          class="text-sky-400 text-xl font-mono px-3 py-1 border border-sky-500/50 rounded-full shadow-sm flex items-center gap-2 mb-4 bg-black/70 cursor-crosshair"
+        >
+          @Alvarez527
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#2196f3"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </span>
+        <h1 class="text-3xl font-extrabold leading-tight font-display">
+          Carlos Álvarez Pérez
+        </h1>
+      </header>
+
+      <section class="flex gap-2 justify-center animate-slide-up-fade">
+        <a
+          class="bg-purple-100 p-2 size-12 sm:size-16 social-button"
+          href="https://twitch.tv/midudev"
+          target="_blank"
+          aria-label="Twitch"
+          title="Ir a twitch @midudev"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#twitch" />
+          </svg>
+        </a>
+
+        <a
+          class="bg-white p-2 size-12 sm:size-16 social-button"
+          href="https://linkedin.com/in/tuusuario"
+          target="_blank"
+          aria-label="LinkedIn"
+          title="Ir a LinkedIn"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#linkedin" />
+          </svg>
+        </a>
+        <a
+          class="bg-white p-2 size-12 sm:size-16 social-button"
+          href="https://youtube.com/tuusuario"
+          target="_blank"
+          aria-label="YouTube"
+          title="Ir a YouTube"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#youtube" />
+          </svg>
+        </a>
+        <a
+          class="bg-black size-12 sm:size-16 social-button"
+          href="https://x.com/tuusuario"
+          target="_blank"
+          aria-label="X"
+          title="Ir a X (Twitter)"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#x" />
+          </svg>
+        </a>
+        <a
+          class="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-2 size-12 sm:size-16 social-button"
+          href="https://instagram.com/tuusuario"
+          target="_blank"
+          aria-label="Instagram"
+          title="Ir a Instagram"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#instagram" />
+          </svg>
+        </a>
+      </section>
+      <p class="text-center mt-4 text-sm">
+        Divulgador de tecnología, programación y desarrollo web.
+        <br />
+        <span class="text-primary">¡Sígueme en mis redes sociales</span>
+      </p>
+      <main class="pt-4 flex flex-col justify-center items-center w-full px-4">
+        <div class="grid grid-cols-3 grid-rows-3 gap-2 w-full">
+          <a
+            href="https://cursoreact.dev"
+            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-cyan-500 flex items-start hover:scale-105 hover:contrast-125 transition col-span-2 p-7 min-h-[180px] group"
+          >
+            <span class="absolute bottom-2 left-2 font-bold text-2xl"
+              >React js</span
+            >
+            <svg
+              class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform"
+              width="100"
+              height="100"
+            >
+              <use xlink:href="./assets/sprite.svg#react" />
+            </svg>
+            <span
+              class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5"
+              >Curso de +14 clases</span
+            >
+          </a>
+            <!-- JavaScript -->
+  <a
+    href="https://cursojavascript.dev"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500 border border-yellow-400 flex items-start hover:scale-105 hover:contrast-125 transition col-span-1 p-7 min-h-[180px] group"
+  >
+    <span class="absolute bottom-2 left-2 font-bold text-2xl">JavaScript</span>
+    <svg class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform" width="80" height="80">
+      <use xlink:href="./assets/sprite.svg#javascript" />
+    </svg>
+    <span class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5">Curso básico</span>
+  </a>
+  <!-- HTML & CSS -->
+  <a
+    href="https://cursohtmlcss.dev"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-pink-500 via-fuchsia-500 to-indigo-500 border border-pink-400 flex items-start hover:scale-105 hover:contrast-125 transition col-span-1 p-7 min-h-[140px] group"
+  >
+    <span class="absolute bottom-2 left-2 font-bold text-xl">HTML & CSS</span>
+    <svg class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform" width="60" height="60">
+      <use xlink:href="./assets/sprite.svg#htmlcss" />
+    </svg>
+    <span class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5">Curso práctico</span>
+  </a>
+  <!-- Node.js -->
+  <a
+    href="https://cursonode.dev"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-green-900 via-green-700 to-green-500 border border-green-500 flex items-start hover:scale-105 hover:contrast-125 transition col-span-2 p-7 min-h-[140px] group"
+  >
+    <span class="absolute bottom-2 left-2 font-bold text-2xl">Node.js</span>
+    <svg class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform" width="80" height="80">
+      <use xlink:href="./assets/sprite.svg#node" />
+    </svg>
+    <span class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5">API REST</span>
+  </a>
+  <!-- Git & GitHub -->
+  <a
+    href="https://cursogit.dev"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-600 to-orange-400 border border-gray-500 flex items-start hover:scale-105 hover:contrast-125 transition col-span-1 p-7 min-h-[140px] group"
+  >
+    <span class="absolute bottom-2 left-2 font-bold text-xl">Git & GitHub</span>
+    <svg class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform" width="60" height="60">
+      <use xlink:href="./assets/sprite.svg#github" />
+    </svg>
+    <span class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5">Control de versiones</span>
+  </a>
+  <!-- TypeScript -->
+  <a
+    href="https://cursotypescript.dev"
+    class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-blue-400 border border-blue-500 flex items-start hover:scale-105 hover:contrast-125 transition col-span-2 p-7 min-h-[140px] group"
+  >
+    <span class="absolute bottom-2 left-2 font-bold text-2xl">TypeScript</span>
+    <svg class="absolute -right-2 -bottom-2 group-hover:-rotate-12 transition-transform" width="80" height="80">
+      <use xlink:href="./assets/sprite.svg#typescript" />
+    </svg>
+    <span class="absolute top-2 left-2 text-sm border rounded-2xl px-1 py-0.5">Tipado estático</span>
+  </a>
+</div>
+
+  </div>
+
+  </div>
+        </div>
+      </main>
+    </header>
+  </body>
+</html>

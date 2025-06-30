@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@plugin "@midudev/tailwind-animations";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/Roboto-VariableFont_wdth,wght.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #0ea5e9; /* sky-500 */
+  --color-secondary: #f97316;
+  /* orange-500 */
+
+  /*Fuente*/
+  --font-display: "Roboto", system-ui, sans-serif;
+}
+
+.social-button {
+  @apply flex items-center justify-center rounded-full hover:scale-110 transition-transform;
+}
